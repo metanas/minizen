@@ -46,4 +46,4 @@ export default class InputAttr extends Vue {
   }
 }
 </script>
-<style lang="scss" src="../../../stylesheets/vue/web-element/input-attr/input-attr.scss"/>
+<style lang="scss" src="../../stylesheets/input-attr/input-attr.scss"/>
