@@ -11,11 +11,6 @@ export default class App extends Vue {}
 </script>
 
 <style lang="scss">
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/_variables";
-@import "~bootstrap/scss/mixins";
-@import "~bootstrap/scss/reboot";
-
 html,
 body,
 #app {

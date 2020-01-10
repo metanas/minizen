@@ -7,7 +7,9 @@ const routes = [
   {
     path: "/login",
     component: () => import("@/views/Login")
-  }
+  },
+  {path: '/Register',
+  component: () => import("@/views/Register")}
 ];
 
 const router = new VueRouter({
