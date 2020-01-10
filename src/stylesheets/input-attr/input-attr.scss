@@ -1,0 +1,14 @@
+@import "~bootstrap/scss/forms";
+
+.input-attr {
+  width: 100%;
+
+  label {
+    font-weight: bold;
+  }
+
+  .error {
+    color: #dc3545;
+    font-size: 15px;
+  }
+}

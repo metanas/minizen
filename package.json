@@ -12,6 +12,7 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "core-js": "^3.4.4",
+    "lodash": "^4.17.15",
     "pug": "^2.0.4",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.19",
+    "@types/lodash": "^4.14.149",
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-e2e-cypress": "^4.1.0",
     "@vue/cli-plugin-eslint": "^4.1.0",
