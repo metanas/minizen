@@ -5,9 +5,9 @@
          .col-md-6.offset-md-3.register-card
           .row
             .col-md-6
-              input-attr(name='input' label="First name")
+              input-attr(name='input' v-model="value" label="First name")
             .col-md-6
-              input-attr(name='input' label='Last name')
+              input-attr(name='input' v-model="value" label='Last name')
           .row
             .col-md-2
               .form-group
@@ -29,9 +29,9 @@
                   option(v-for="i in range(2020,1950)" :value="i") {{i}}
           .row
             .col-md-12
-              input-attr(name='input' :value='value' label="Email" placeholder="email@email.com")
-              input-attr(name='input' :value='value' type="password" label="Password" placeholder="Password ")
-              input-attr(name='input' :value='value' type="password" label="Confirm Password" placeholder="Password ")
+              input-attr(name='input' v-model='value' label="Email" placeholder="email@email.com")
+              input-attr(name='input' v-model='value' type="password" label="Password" placeholder="Password ")
+              input-attr(name='input' v-model='value' type="password" label="Confirm Password" placeholder="Password ")
               button.btn.btn-minizen.float-right(type='submit') Enregistrer-vous
 
 </template>
@@ -44,7 +44,9 @@ import { range } from "lodash";
   components: { inputAttr },
   methods: { range }
 })
-export default class Register extends Vue {}
+export default class Register extends Vue {
+  value = "";
+}
 </script>
 
 <style lang="scss">
