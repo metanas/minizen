@@ -38,11 +38,11 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import inputAttr from "@/components/inputs/inputAttr.vue";
-import {range} from "lodash";
+import { range } from "lodash";
 @Component({
   name: "Register",
   components: { inputAttr },
-    methods:{range}
+  methods: { range }
 })
 export default class Register extends Vue {}
 </script>
@@ -55,14 +55,13 @@ export default class Register extends Vue {}
 @import "~bootstrap/scss/utilities/float";
 .register-page {
   height: 100%;
-  .register-card{
+  .register-card {
     background-color: #2d2c2c;
     padding: 30px;
     border-radius: 14px;
-    label{
+    label {
       color: white;
     }
   }
 }
-
 </style>
