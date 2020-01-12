@@ -2,25 +2,30 @@
 .container-fluid.header-content
   .row
     .col-md-3
-      img.logo( :src="logo")
+      router-link(to="/")
+        img.logo( :src="logo")
     .col-md-6
+      span
+        router-link.link(to="/")
     .col-md-3.align-items-center.actions
       span
-       router-link.link(to="/login")
-        span Login
-       span.bar  |
+        router-link.link(to="/login")
+          span {{ name }}
+        span.bar &nbsp;|&nbsp;
         router-link.link(to="/register")
-          span  Register
+          span Register
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Prop } from "vue-property-decorator";
 import logo from "@/assets/logo.png";
 @Component({
   name: "PublicHeader"
 })
 export default class PublicHeader extends Vue {
   logo = logo;
+
+  @Prop() name!: string;
 }
 </script>
 
