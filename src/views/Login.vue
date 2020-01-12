@@ -3,8 +3,8 @@
   .container
     .row
       .col-md-6.offset-md-3.login-card
-        input-attr(name='input' :value='value' label="Email" placeholder="email@email.com")
-        input-attr(name='input' :value='value' type="password" label="Password" placeholder="*********")
+        input-attr(name='input' v-model='email' label="Email" placeholder="email@email.com" @update:value="setEmail")
+        input-attr(name='input' v-model="email" type="password" label="Password" placeholder="*********")
         button.btn.btn-minizen.float-right(type='submit') connectez vous
 
 </template>
@@ -16,7 +16,11 @@ import inputAttr from "@/components/inputs/inputAttr.vue";
   components: { inputAttr }
 })
 export default class Login extends Vue {
-  value = "";
+  email = "";
+
+  setEmail(value: string): void {
+    this.email = value;
+  }
 }
 </script>
 <style lang="scss">
@@ -29,13 +33,12 @@ export default class Login extends Vue {
 .login-page {
   height: 100%;
 
-
-  .login-card{
+  .login-card {
     background-color: #2d2c2c;
     padding: 30px;
     border-radius: 14px;
 
-    label{
+    label {
       color: white;
     }
   }
