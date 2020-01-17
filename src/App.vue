@@ -1,8 +1,7 @@
 <template lang="pug">
-  #app
-    PublicHeader( name="Login")
+  v-app
+    public-header
     router-view.content
-    PublicFooter
 </template>
 
 <script lang="ts">
