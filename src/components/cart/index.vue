@@ -21,9 +21,7 @@
                 v-flex(sm4 md4 lg4 xl4 text-center pa-0 cart-action)
                   v-btn.primary.d-inline-block(icon @click.stop='dialog = true' @click='deleteProductFromCart(cart)')
                     v-icon remove_shopping_cart
-                  v-btn.primary.d-inline-block.ml-2.d-inline-flex.align-items-center(icon to='/cart')
-                    v-icon edit
-      delete-confirmation(ref='deleteConfirmationDialog' message='Are you sure you want to delete this product?' @onconfirm='onDeleteProductFromCart')
+      delete-confirmation(:open="showModal" message='Are you sure you want to delete this product?' @onConfirm='onDeleteProductFromCart')
       v-layout(align-center pa-3)
         v-btn.accent.white--text(block to='/checkout') Checkout
     .text-center.white.pa-6(v-else)
@@ -41,7 +39,7 @@ import { mapGetters } from "vuex";
   name: "Cart",
   components: { VuePerfectScrollBar, DeleteConfirmation },
   computed: {
-    ...mapGetters(["cart", "selectedCurrency", "currencies"])
+    ...mapGetters(["cart"])
   }
 })
 export default class Cart extends Vue {
@@ -49,6 +47,9 @@ export default class Cart extends Vue {
   settings = {
     maxScrollbarLength: 160
   };
+
+  showModal = false;
+
   get getTotalPrice() {
     let totalPrice = 0;
     if (this.cart.length > 0) {
@@ -60,12 +61,14 @@ export default class Cart extends Vue {
       return totalPrice;
     }
   }
+
   deleteProductFromCart(product) {
-    this.$refs.deleteConfirmationDialog.openDialog();
+    this.showModal = true;
     this.selectDeletedProduct = product;
   }
+
   onDeleteProductFromCart() {
-    this.$refs.deleteConfirmationDialog.close();
+    this.showModal = false;
     this.$snotify.success("Product Removing from cart", {
       closeOnClick: false,
       pauseOnHover: false,

@@ -2,33 +2,11 @@
 @import "~bootstrap/scss/utilities/float";
 @import "~bootstrap/scss/utilities/flex";
 
-.header-content {
-  height: 70px;
-  background-color: #2d2c2c;
+.action {
 
-  .logo{
-    width: 60px;
-    height: 60px;
-    margin-top: 5px;
-  }
-
-  .actions {
-    display: flex;
-    flex-direction: row-reverse;
-
-    .link {
-        text-decoration: none;
-        font-size: 20px;
-        font-weight: bold;
-        color: white;
-        &:hover{
-          color: $primary-color;
-        }
-    }
-
-    .bar {
-      font-weight: bold;
-      color: white;
-    }
+  a, span {
+    font-size: 20px;
+    color: white !important;
+    text-decoration: none;
   }
 }

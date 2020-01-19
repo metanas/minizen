@@ -17,7 +17,11 @@ div
                 div.notifications.d-flex.align-items-center.justify-end
                   cart
                   wishlist
-                  user-block(:data="userLinks")
+                  user-block(:data="userLinks" v-if="false")
+                  span.action(v-else)
+                    router-link(to="/login") Login
+                    span.mr-2.ml-2 |
+                    router-link(to="/register") Register
     div.bottom-header
       v-container
         div.bottom-header-inner
@@ -27,12 +31,12 @@ div
             v-btn( icon dark @click="toggleMobileSidebar" class="toggle-btn")
               i.material-icons menu
           search
-  div#fixedHeader
+  div#fixedHeader(ref="fixedHeader")
    fix-header
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
+import { Component, Vue, Prop, Ref } from "vue-property-decorator";
 import logo from "@/assets/logo.png";
 import Cart from "@/components/cart/index.vue";
 import Wishlist from "@/components/wishlist/index.vue";
@@ -73,25 +77,26 @@ export default class PublicHeader extends Vue {
 
   @Prop() name!: string;
 
+  @Ref("fixedHeader") Header!: HTMLFormElement;
+
   mounted() {
     this.fixedHeader();
   }
 
-  toggleMobileSidebar() {
+  toggleMobileSidebar(): void {
     this.$store.dispatch("toggleSidebar", true);
   }
 
-  fixedHeader() {
-    var fixedHeader = document.getElementById("fixedHeader");
-    window.onscroll = function() {
+  fixedHeader(): void {
+    window.onscroll = () => {
       if (window.pageYOffset > 100) {
-        fixedHeader.style.opacity = "1";
-        fixedHeader.style.visibility = "visible";
-        fixedHeader.style.translate = "translateY(0)";
+        this.Header.style.opacity = "1";
+        this.Header.style.visibility = "visible";
+        this.Header.style.translate = "translateY(0)";
       } else {
-        fixedHeader.style.opacity = "0";
-        fixedHeader.style.visibility = "hidden";
-        fixedHeader.style.translate = "translateY(-200px)";
+        this.Header.style.opacity = "0";
+        this.Header.style.visibility = "hidden";
+        this.Header.style.translate = "translateY(-200px)";
       }
     };
   }
