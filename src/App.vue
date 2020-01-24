@@ -2,6 +2,7 @@
   v-app
     public-header
     router-view.content
+    public-footer(title="title"  description="description")
 </template>
 
 <script lang="ts">
@@ -26,7 +27,7 @@ body,
   -moz-osx-font-smoothing: grayscale;
 
   .content {
-    min-height: calc(100% - 140px);
+    min-height: calc(100% - 80px);
   }
 }
 </style>
