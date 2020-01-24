@@ -16,16 +16,6 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 export default class DeleteConfirmation extends Vue {
   @Prop() message?: string;
 
-  @Prop() onConfirm?: string;
-
-  open = false;
-
-  openDialog() {
-    this.open = true;
-  }
-
-  close() {
-    this.open = false;
-  }
+  @Prop({ default: false }) open!: boolean;
 }
 </script>
