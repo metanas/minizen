@@ -22,15 +22,7 @@ div
                     router-link(to="/login") Login
                     span.mr-2.ml-2 |
                     router-link(to="/register") Register
-    div.bottom-header
-      v-container
-        div.bottom-header-inner
-          div.menu-alignment
-            menu
-          div.layout.align-left.responsive-menu
-            v-btn( icon dark @click="toggleMobileSidebar" class="toggle-btn")
-              i.material-icons menu
-          search
+
   div#fixedHeader(ref="fixedHeader")
    fix-header
 </template>
@@ -41,13 +33,11 @@ import logo from "@/assets/logo.png";
 import Cart from "@/components/cart/index.vue";
 import Wishlist from "@/components/wishlist/index.vue";
 import UserBlock from "@/components/userBlock/index.vue";
-import Menu from "@/components/menu/index.vue";
-import Search from "@/components/Search/index.vue";
 import FixHeader from "@/components/fixHeader/index.vue";
 
 @Component({
   name: "PublicHeader",
-  components: { Cart, Wishlist, UserBlock, Menu, Search, FixHeader }
+  components: { Cart, Wishlist, UserBlock, FixHeader }
 })
 export default class PublicHeader extends Vue {
   logo = logo;
