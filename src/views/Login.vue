@@ -20,7 +20,7 @@ Vue.use(Vuelidate);
 
 @Component({
   name: "Login",
-  components: { inputAttr, cardd},
+  components: { inputAttr},
   validations: {
     email: {
       email
