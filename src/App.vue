@@ -2,7 +2,6 @@
   v-app
     public-header
     router-view.content
-    public-footer(title="title"  description="description")
 </template>
 
 <script lang="ts">
@@ -13,7 +12,9 @@ import PublicHeader from "@/components/header/index.vue";
 @Component({
   components: { PublicHeader, PublicFooter }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+
+}
 </script>
 
 <style lang="scss">

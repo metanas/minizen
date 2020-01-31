@@ -8,7 +8,7 @@ const routes = [
     path: "/login",
     component: () => import("@/views/Login.vue")
   },
-  { path: "/Register", component: () => import("@/views/Register.vue") }
+  { path: "/Register", component: () => import("@/views/Register.vue") },
 ];
 
 const router = new VueRouter({

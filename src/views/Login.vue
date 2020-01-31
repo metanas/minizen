@@ -1,24 +1,26 @@
 <template lang="pug">
 .login-page.d-flex.align-items-center
+  cardd
   .container
-    .row
-      .col-md-6.offset-md-3.login-card
-        form(@submit.prevent="submit")
-          input-attr(name='email' v-model='$v.email.$model' label="Email" placeholder="email@email.com" @update:value="setEmail" :has-error="$v.email.$error" :is-valid="!$v.email.$error && $v.email.$model")
-          input-attr(name='password' v-model="$v.password.$model" type="password" label="Password" placeholder="*********" @update:value="setPassword" :has-error="$v.password.$error" :is-valid="!$v.password.$error && $v.password.$model")
-          button.btn.btn-minizen.float-right(type='submit') connectez vous
+      .row
+        .col-md-6.offset-md-3.login-card
+          form(@submit.prevent="submit")
+            input-attr(name='email' v-model='$v.email.$model' label="Email" placeholder="email@email.com" @update:value="setEmail" :has-error="$v.email.$error" :is-valid="!$v.email.$error && $v.email.$model")
+            input-attr(name='password' v-model="$v.password.$model" type="password" label="Password" placeholder="*********" @update:value="setPassword" :has-error="$v.password.$error" :is-valid="!$v.password.$error && $v.password.$model")
+            button.btn.btn-minizen.float-right(type='submit') connectez vous
+
 </template>
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 import inputAttr from "@/components/inputs/inputAttr.vue";
 import Vuelidate from "vuelidate";
 import { email, minLength } from "vuelidate/lib/validators";
-
+import cardd from "@/components/card/index.vue"
 Vue.use(Vuelidate);
 
 @Component({
   name: "Login",
-  components: { inputAttr },
+  components: { inputAttr},
   validations: {
     email: {
       email
