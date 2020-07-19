@@ -16,7 +16,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "bootstrap": "^4.4.1",
     "core-js": "^3.6.3",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "moment": "^2.24.0",
     "nprogress": "^0.2.0",
     "pug": "^2.0.4",
